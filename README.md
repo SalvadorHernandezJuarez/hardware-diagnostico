@@ -33,7 +33,7 @@ Este proyecto se encuentra en su primera versión y se estará **actualizando co
 
 ---
 
-## 🔮 Próximas mejoras 
+## Próximas mejoras 
 
 Algunas funcionalidades que se planean agregar:
 
