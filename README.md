@@ -33,7 +33,7 @@ Este proyecto se encuentra en su primera versión y se estará **actualizando co
 
 ---
 
-## Próximas mejoras 
+## Próximas mejoras (19/05/2026)
 
 Algunas funcionalidades que se planean agregar:
 
@@ -48,7 +48,7 @@ Algunas funcionalidades que se planean agregar:
 
 ---
 
-## 🛠️ Instalación
+## Instalación
 ```bash
 git clone https://github.com/tu-usuario/hardware-diagnostic.git
 cd hardware-diagnostic
