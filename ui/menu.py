@@ -101,7 +101,7 @@ class Menu:
             print("  7️   Ver Temperatura")
             print("  8️   Ver GPU")
             print("  9️   Ver Logs anteriores")
-            print(f"  🔧   [P] Modo Profesional ({'ON' if self.modo_profesional else 'OFF'})")
+            print(f"    [P] Modo Profesional ({'ON' if self.modo_profesional else 'OFF'})")
             print("    [0] Salir")
             print(f"  {SEPARADOR}")
 

@@ -2,22 +2,7 @@
 
 Herramienta en Python para diagnosticar hardware y estado del sistema en equipos Windows. Permite obtener información detallada del sistema, CPU, RAM, discos, GPU, batería y temperatura de forma rápida desde la terminal.
 
----
-
-## Características v2.0
-
-- ✅ Información del sistema operativo
-- ✅ Detalles de CPU con uso en tiempo real
-- ✅ RAM con tipo (DDR3/DDR4/DDR5) por módulo
-- ✅ Discos con barra visual de uso + salud SMART
-- ✅ Detección de GPU (NVIDIA vía GPUtil, AMD/Intel vía WMI)
-- ✅ Estado de batería con tiempo restante
-- ✅ Temperatura con alertas por color
-- ✅ **Exportar diagnóstico a PDF**
-- ✅ **Sistema de logs** (guarda diagnósticos anteriores en JSON)
-- ✅ **Modo profesional** (muestra datos técnicos avanzados)
-- ✅ **Recomendaciones inteligentes** según el estado real del equipo
-- ✅ Menú interactivo mejorado con acceso a módulos individuales
+<img src="img/preview.png" alt="Preview" width="700"/>
 
 ---
 
@@ -53,11 +38,11 @@ diagnostico/
 
 ---
 
-## Instalación
+## 🚀 Instalación
 
 ```bash
-git clone 
-cd hardware-diagnostic
+git clone https://github.com/tu-usuario/hardware-diagnostico.git
+cd hardware-diagnostico
 pip install -r requirements.txt
 python main.py
 ```
