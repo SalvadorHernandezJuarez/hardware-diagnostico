@@ -1,56 +1,74 @@
-# 🖥️ Herramienta de diagnóstico de hardware
+# 🖥️ Herramienta de Diagnóstico de Hardware — v2.0
 
-Herramienta en Python para diagnosticar hardware y estado del sistema en equipos Windows.  
-Permite obtener información detallada del sistema, CPU, RAM, discos, batería y uso del almacenamiento de forma rápida desde la terminal.
-
----
-
-## Versión
-
-**Versión actual:** v1.0  
-
-Este proyecto se encuentra en su primera versión y se estará **actualizando constantemente** con nuevas funcionalidades, mejoras y optimizaciones.
+Herramienta en Python para diagnosticar hardware y estado del sistema en equipos Windows. Permite obtener información detallada del sistema, CPU, RAM, discos, GPU, batería y temperatura de forma rápida desde la terminal.
 
 ---
 
-## 📸 Vista previa
+## ⚙️ Características v2.0
 
-![Diagnóstico](docs/preview.png)
-
----
-
-## ⚙️ Características actuales
-
-- Información del sistema operativo
-- Detalles de CPU
-- Información de memoria RAM
-- Información de discos
-- Estado de batería
-- Temperatura del sistema (si está disponible)
-- Uso del almacenamiento
-- Recomendaciones de mejora de hardware
-- Interfaz en terminal con menú interactivo
+- ✅ Información del sistema operativo
+- ✅ Detalles de CPU con uso en tiempo real
+- ✅ RAM con tipo (DDR3/DDR4/DDR5) por módulo
+- ✅ Discos con barra visual de uso + salud SMART
+- ✅ Detección de GPU (NVIDIA vía GPUtil, AMD/Intel vía WMI)
+- ✅ Estado de batería con tiempo restante
+- ✅ Temperatura con alertas por color
+- ✅ **Exportar diagnóstico a PDF**
+- ✅ **Sistema de logs** (guarda diagnósticos anteriores en JSON)
+- ✅ **Modo profesional** (muestra datos técnicos avanzados)
+- ✅ **Recomendaciones inteligentes** según el estado real del equipo
+- ✅ Menú interactivo mejorado con acceso a módulos individuales
 
 ---
 
-## Próximas mejoras (19/05/2026)
+## 📁 Arquitectura del proyecto
 
-Algunas funcionalidades que se planean agregar:
-
-- Exportar diagnóstico a PDF
-- Detección de GPU
-- Diagnóstico de salud del disco
-- Reporte automático para soporte técnico
-- Versión ejecutable (.exe)
-- Compatibilidad con mas sistemas operativos
-- Sistema de logs
-- Modo profesional para técnicos
+```
+diagnostico/
+├── main.py                  # Punto de entrada
+├── requirements.txt         # Dependencias
+│
+├── ui/
+│   └── menu.py              # Interfaz de menú interactivo
+│
+├── modules/
+│   ├── base.py              # Clase base para todos los módulos
+│   ├── sistema.py           # Info del sistema operativo
+│   ├── cpu.py               # Info del procesador
+│   ├── ram.py               # Info de memoria RAM
+│   ├── disco.py             # Info de discos + salud SMART
+│   ├── bateria.py           # Estado de la batería
+│   ├── temperatura.py       # Temperaturas del sistema
+│   └── gpu.py               # Detección de GPU (NUEVO)
+│
+├── utils/
+│   ├── logger.py            # Guardar y ver logs (NUEVO)
+│   └── recomendaciones.py   # Recomendaciones inteligentes (MEJORADO)
+│
+├── reports/
+│   └── exportar.py          # Exportar a PDF (NUEVO)
+│
+└── logs/                    # Logs JSON generados automáticamente
+```
 
 ---
 
-## Instalación
+## 🚀 Instalación
+
 ```bash
 git clone https://github.com/tu-usuario/hardware-diagnostic.git
 cd hardware-diagnostic
-python diagnostico.py
+pip install -r requirements.txt
+python main.py
+```
 
+---
+
+## 📦 Nuevas dependencias
+
+| Librería | Para qué sirve | Instalar con |
+|---|---|---|
+| `GPUtil` | Detectar GPU NVIDIA (uso, VRAM, temperatura) | `pip install GPUtil` |
+| `reportlab` | Exportar diagnóstico a PDF | `pip install reportlab` |
+
+> `psutil`, `wmi` y `pywin32` ya eran requeridas en v1.0.
