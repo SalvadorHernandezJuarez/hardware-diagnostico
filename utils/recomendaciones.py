@@ -8,7 +8,7 @@ class Recomendaciones:
     @staticmethod
     def mostrar(resultados: dict):
         print("\n" + "=" * 50)
-        print("  💡 RECOMENDACIONES")
+        print("   RECOMENDACIONES")
         print("=" * 50)
 
         tips = []

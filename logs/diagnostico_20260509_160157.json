@@ -1,0 +1,63 @@
+{
+  "fecha": "2026-05-09T16:01:57.301708",
+  "modulos": {
+    "Sistema Operativo": {
+      "Sistema": "Windows",
+      "Release": "10",
+      "Versión": "10.0.26200",
+      "Arquitectura": "AMD64",
+      "Hostname": "salvador",
+      "Python": "3.10.11"
+    },
+    "CPU": {
+      "Uso actual": "1.2 %",
+      "Núcleos físicos": 10,
+      "Hilos (lógicos)": 16,
+      "Frecuencia actual": "1520 MHz",
+      "Frecuencia máxima": "2400 MHz"
+    },
+    "RAM": {
+      "Total": "15.65 GB",
+      "Disponible": "3.72 GB",
+      "Usado": "11.92 GB",
+      "Porcentaje de uso": "76.2 %",
+      "slots": []
+    },
+    "Discos": {
+      "discos_fisicos": [],
+      "particiones": [
+        {
+          "Unidad": "C:\\",
+          "Tipo": "NTFS",
+          "Total": "952.84 GB",
+          "Usado": "337.95 GB",
+          "Libre": "614.88 GB",
+          "Uso": "35.5 %"
+        }
+      ]
+    },
+    "Batería": {
+      "Porcentaje": "95.0 %",
+      "Conectada a corriente": "No",
+      "Tiempo restante estimado": "2h 21m",
+      "Estado": "🟢 Bueno"
+    },
+    "Temperatura": {
+      "estado": "No disponible en este sistema"
+    },
+    "GPU": {
+      "gpus": [
+        {
+          "Nombre": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+          "VRAM Total": "6144.0 MB",
+          "VRAM Usada": "0.0 MB",
+          "VRAM Libre": "6002.0 MB",
+          "Carga GPU": "0.0 %",
+          "Temperatura": "34.0 °C",
+          "Driver": "581.83",
+          "Fuente": "GPUtil (NVIDIA)"
+        }
+      ]
+    }
+  }
+}

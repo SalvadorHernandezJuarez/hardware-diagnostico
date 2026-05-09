@@ -4,7 +4,7 @@ Herramienta en Python para diagnosticar hardware y estado del sistema en equipos
 
 ---
 
-## ⚙️ Características v2.0
+## Características v2.0
 
 - ✅ Información del sistema operativo
 - ✅ Detalles de CPU con uso en tiempo real
@@ -53,10 +53,10 @@ diagnostico/
 
 ---
 
-## 🚀 Instalación
+## Instalación
 
 ```bash
-git clone https://github.com/tu-usuario/hardware-diagnostic.git
+git clone 
 cd hardware-diagnostic
 pip install -r requirements.txt
 python main.py
