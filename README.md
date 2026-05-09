@@ -38,7 +38,7 @@ diagnostico/
 
 ---
 
-## 🚀 Instalación
+## Instalación
 
 ```bash
 git clone https://github.com/tu-usuario/hardware-diagnostico.git
@@ -49,7 +49,7 @@ python main.py
 
 ---
 
-## 📦 Nuevas dependencias
+## Nuevas dependencias
 
 | Librería | Para qué sirve | Instalar con |
 |---|---|---|
