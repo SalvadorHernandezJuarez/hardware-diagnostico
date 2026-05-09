@@ -57,3 +57,12 @@ python main.py
 | `reportlab` | Exportar diagnóstico a PDF | `pip install reportlab` |
 
 > `psutil`, `wmi` y `pywin32` ya eran requeridas en v1.0.
+
+---
+## 👤 Autor
+
+**Salvador Hernández Juárez**
+
+[![GitHub](https://img.shields.io/badge/GitHub-SalvadorHernandezJuarez-181717?logo=github)](https://github.com/SalvadorHernandezJuarez)
+
+---
