@@ -1,0 +1,19 @@
+# =============================================
+#   DIAGNOSTICO - Dependencias del proyecto
+# =============================================
+
+# Ya incluidas en Python estándar:
+#   os, platform, subprocess, json, datetime, abc
+
+# Monitoreo del sistema (CPU, RAM, disco, batería, temperatura)
+psutil>=5.9.0
+
+# Información detallada de hardware en Windows (BIOS, RAM, CPU, discos)
+wmi>=1.5.1
+pywin32>=306
+
+# Detección de GPU NVIDIA con métricas en tiempo real
+GPUtil>=1.4.0
+
+# Exportación de diagnósticos a PDF
+reportlab>=4.0.0
