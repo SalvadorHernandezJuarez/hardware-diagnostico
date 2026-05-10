@@ -1,4 +1,4 @@
-# 🖥️ Herramienta de Diagnóstico de Hardware — v2.0
+# Herramienta de Diagnóstico de Hardware — v2.0
 
 Herramienta en Python para diagnosticar hardware y estado del sistema en equipos Windows. Permite obtener información detallada del sistema, CPU, RAM, discos, GPU, batería y temperatura de forma rápida desde la terminal.
 
