@@ -6,38 +6,6 @@ Herramienta en Python para diagnosticar hardware y estado del sistema en equipos
 
 ---
 
-## 📁 Arquitectura del proyecto
-
-```
-diagnostico/
-├── main.py                  # Punto de entrada
-├── requirements.txt         # Dependencias
-│
-├── ui/
-│   └── menu.py              # Interfaz de menú interactivo
-│
-├── modules/
-│   ├── base.py              # Clase base para todos los módulos
-│   ├── sistema.py           # Info del sistema operativo
-│   ├── cpu.py               # Info del procesador
-│   ├── ram.py               # Info de memoria RAM
-│   ├── disco.py             # Info de discos + salud SMART
-│   ├── bateria.py           # Estado de la batería
-│   ├── temperatura.py       # Temperaturas del sistema
-│   └── gpu.py               # Detección de GPU (NUEVO)
-│
-├── utils/
-│   ├── logger.py            # Guardar y ver logs (NUEVO)
-│   └── recomendaciones.py   # Recomendaciones inteligentes (MEJORADO)
-│
-├── reports/
-│   └── exportar.py          # Exportar a PDF (NUEVO)
-│
-└── logs/                    # Logs JSON generados automáticamente
-```
-
----
-
 ## Instalación
 
 ```bash
