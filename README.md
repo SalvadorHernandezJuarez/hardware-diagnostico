@@ -27,7 +27,7 @@ python main.py
 > `psutil`, `wmi` y `pywin32` ya eran requeridas en v1.0.
 
 ---
-## 👤 Autor
+## Autor
 
 **Salvador Hernández Juárez**
 
