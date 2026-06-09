@@ -17,7 +17,7 @@ python main.py
 
 ---
 
-## Nuevas dependencias
+## Dependencias
 
 | Librería | Para qué sirve | Instalar con |
 |---|---|---|
