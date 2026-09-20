@@ -1,26 +1,18 @@
 {
-  "fecha": "2026-05-09T16:01:57.301708",
+  "fecha": "2026-09-20T13:55:55.936920",
   "modulos": {
-    "Sistema Operativo": {
-      "Sistema": "Windows",
-      "Release": "10",
-      "Versión": "10.0.26200",
-      "Arquitectura": "AMD64",
-      "Hostname": "salvador",
-      "Python": "3.10.11"
-    },
     "CPU": {
-      "Uso actual": "1.2 %",
+      "Uso actual": "0.9 %",
       "Núcleos físicos": 10,
       "Hilos (lógicos)": 16,
-      "Frecuencia actual": "1520 MHz",
+      "Frecuencia actual": "2400 MHz",
       "Frecuencia máxima": "2400 MHz"
     },
     "RAM": {
       "Total": "15.65 GB",
-      "Disponible": "3.72 GB",
-      "Usado": "11.92 GB",
-      "Porcentaje de uso": "76.2 %",
+      "Disponible": "6.20 GB",
+      "Usado": "9.45 GB",
+      "Porcentaje de uso": "60.4 %",
       "slots": []
     },
     "Discos": {
@@ -29,18 +21,18 @@
         {
           "Unidad": "C:\\",
           "Tipo": "NTFS",
-          "Total": "952.84 GB",
-          "Usado": "337.95 GB",
-          "Libre": "614.88 GB",
-          "Uso": "35.5 %"
+          "Total": "952.76 GB",
+          "Usado": "423.79 GB",
+          "Libre": "528.97 GB",
+          "Uso": "44.5 %"
         }
       ]
     },
     "Batería": {
-      "Porcentaje": "95.0 %",
+      "Porcentaje": "42.0 %",
       "Conectada a corriente": "No",
-      "Tiempo restante estimado": "2h 21m",
-      "Estado": "🟢 Bueno"
+      "Tiempo restante estimado": "1h 3m",
+      "Estado": "🟡 Moderado"
     },
     "Temperatura": {
       "estado": "No disponible en este sistema"
@@ -51,10 +43,10 @@
           "Nombre": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
           "VRAM Total": "6144.0 MB",
           "VRAM Usada": "0.0 MB",
-          "VRAM Libre": "6002.0 MB",
+          "VRAM Libre": "6001.0 MB",
           "Carga GPU": "0.0 %",
-          "Temperatura": "34.0 °C",
-          "Driver": "581.83",
+          "Temperatura": "38.0 °C",
+          "Driver": "592.82",
           "Fuente": "GPUtil (NVIDIA)"
         }
       ]

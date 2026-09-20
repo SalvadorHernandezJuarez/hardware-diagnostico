@@ -4,10 +4,16 @@ utils/logger.py - Sistema de logs para guardar diagnósticos anteriores
 
 import os
 import json
+import sys
 from datetime import datetime
 
 
-RUTA_LOGS = os.path.join(os.path.dirname(os.path.dirname(__file__)), "logs")
+if getattr(sys, "frozen", False):
+    RUTA_PROYECTO = os.path.dirname(sys.executable)
+else:
+    RUTA_PROYECTO = os.path.dirname(os.path.dirname(__file__))
+
+RUTA_LOGS = os.path.join(RUTA_PROYECTO, "logs")
 
 
 class Logger:

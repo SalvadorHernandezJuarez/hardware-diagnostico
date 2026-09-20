@@ -1,5 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+import os
+
 
 a = Analysis(
     ['main.py'],
@@ -22,7 +24,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='main',
+    name='DiagnosticoHardware',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -35,5 +37,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['C:\\Users\\salva\\Desktop\\hardware-diagnostico\\flor morada.ico'],
+    icon=[os.path.join(SPECPATH, 'flor morada.ico')],
 )
