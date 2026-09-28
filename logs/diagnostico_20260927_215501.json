@@ -1,0 +1,40 @@
+{
+  "fecha": "2026-09-27T21:55:01.766594",
+  "modulos": {
+    "Sistema Operativo": {
+      "Sistema": "Windows",
+      "Release": "10",
+      "Versión": "10.0.26200",
+      "Arquitectura": "AMD64",
+      "Hostname": "salvador",
+      "Python": "3.10.11"
+    },
+    "Resultado": {
+      "fecha": "2026-09-27T21:55:01-06:00",
+      "modo": "normal",
+      "estado": "INFORMACIÓN",
+      "resultados": [
+        {
+          "code": "SYSTEM_HEALTH",
+          "title": "Estado general del equipo",
+          "description": "No hay métricas suficientes para evaluar el estado de salud.",
+          "evidence": {
+            "score": 100,
+            "hallazgos": []
+          },
+          "severity": "INFORMACIÓN",
+          "recommendation": "Mantén el equipo actualizado y revisa diagnósticos periódicos.",
+          "component": "SISTEMA",
+          "current_value": null,
+          "expected_value": null,
+          "confidence": "MEDIA",
+          "timestamp": "2026-09-27T21:55:01-06:00",
+          "source": "Desconocida",
+          "rule_id": "",
+          "priority": 100,
+          "possible_causes": []
+        }
+      ]
+    }
+  }
+}

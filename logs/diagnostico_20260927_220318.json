@@ -1,0 +1,10 @@
+{
+  "fecha": "2026-09-27T22:03:18.742961",
+  "modulos": {
+    "Herramienta administrativa": {
+      "success": false,
+      "tool": "Administrador de tareas",
+      "error": "Disponible únicamente en Modo Profesional."
+    }
+  }
+}

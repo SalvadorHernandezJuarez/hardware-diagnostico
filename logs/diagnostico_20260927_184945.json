@@ -1,0 +1,43 @@
+{
+  "fecha": "2026-09-27T18:49:45.345199",
+  "modulos": {
+    "Diagnóstico determinístico": {
+      "timestamp": "2026-09-27T18:49:45-06:00",
+      "mode": "normal",
+      "summary": {
+        "severity": "NORMAL",
+        "critical": 0,
+        "alerts": 0,
+        "problems": 0,
+        "information": 0,
+        "normal": 1,
+        "findings_count": 1
+      },
+      "component_statuses": {
+        "DISCO": "NORMAL"
+      },
+      "findings": [
+        {
+          "code": "STORAGE_NO_REPORTED_PROBLEM",
+          "title": "Sin problemas de almacenamiento detectados",
+          "description": "No se detectó poco espacio ni una alerta de salud reportada; la disponibilidad de SMART se informa por separado.",
+          "evidence": {
+            "volume_count": 1,
+            "physical_drive_count": 1
+          },
+          "severity": "NORMAL",
+          "recommendation": "",
+          "component": "ALMACENAMIENTO",
+          "current_value": null,
+          "expected_value": "más de 15 GB y 15% libre",
+          "confidence": "MEDIA",
+          "timestamp": "2026-09-27T18:49:44-06:00",
+          "source": "psutil y WMI/CIM",
+          "rule_id": "STORAGE_NO_REPORTED_PROBLEM",
+          "priority": 100,
+          "possible_causes": []
+        }
+      ]
+    }
+  }
+}

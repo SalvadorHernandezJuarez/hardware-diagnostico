@@ -1,0 +1,90 @@
+{
+  "fecha": "2026-09-27T22:36:53.807343",
+  "modulos": {
+    "Sistema Operativo": {
+      "Sistema": "Windows",
+      "Release": "10",
+      "Versión": "10.0.26200",
+      "Arquitectura": "AMD64",
+      "Hostname": "salvador",
+      "Python": "3.10.11"
+    },
+    "CPU": {
+      "Uso actual": "2.1 %",
+      "Núcleos físicos": 10,
+      "Hilos (lógicos)": 16,
+      "Frecuencia actual": "2400 MHz",
+      "Frecuencia máxima": "2400 MHz"
+    },
+    "RAM": {
+      "Total": "15.65 GB",
+      "Disponible": "3.10 GB",
+      "Usado": "12.55 GB",
+      "Porcentaje de uso": "80.2 %",
+      "slots": []
+    },
+    "Discos": {
+      "discos_fisicos": [],
+      "particiones": [
+        {
+          "Unidad": "C:\\",
+          "Tipo": "NTFS",
+          "Total": "952.76 GB",
+          "Usado": "419.51 GB",
+          "Libre": "533.25 GB",
+          "Uso": "44.0 %"
+        }
+      ]
+    },
+    "GPU": {
+      "gpus": [
+        {
+          "Nombre": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+          "VRAM Total": "6144.0 MB",
+          "VRAM Usada": "0.0 MB",
+          "VRAM Libre": "6001.0 MB",
+          "Carga GPU": "0.0 %",
+          "Temperatura": "40.0 °C",
+          "Driver": "592.82",
+          "Fuente": "GPUtil (NVIDIA)"
+        }
+      ]
+    },
+    "Batería": {
+      "Porcentaje": "15.0 %",
+      "Conectada a corriente": "No",
+      "Tiempo restante estimado": "0h 23m",
+      "Estado": "🔴 Crítico"
+    },
+    "Resultado": {
+      "fecha": "2026-09-27T22:36:53-06:00",
+      "modo": "normal",
+      "estado": "ALERTA",
+      "resultados": [
+        {
+          "code": "SYSTEM_HEALTH",
+          "title": "Estado general del equipo",
+          "description": "Evaluación de salud: ALERTA (puntuación 78/100).",
+          "evidence": {
+            "score": 78,
+            "hallazgos": [
+              "RAM con uso elevado (>75%). El sistema puede mostrar lentitud bajo carga.",
+              "Batería baja, posible problema de autonomía del equipo."
+            ]
+          },
+          "severity": "ALERTA",
+          "recommendation": "Revisa procesos con alto consumo y evita multitarea intensiva.",
+          "component": "SISTEMA",
+          "current_value": null,
+          "expected_value": null,
+          "confidence": "MEDIA",
+          "timestamp": "2026-09-27T22:36:53-06:00",
+          "source": "Desconocida",
+          "rule_id": "",
+          "priority": 100,
+          "possible_causes": []
+        }
+      ]
+    }
+  }
+}

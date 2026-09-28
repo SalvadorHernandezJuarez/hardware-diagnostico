@@ -1,0 +1,247 @@
+{
+  "fecha": "2026-09-27T22:00:03.062264",
+  "modulos": {
+    "Diagnóstico determinístico": {
+      "timestamp": "2026-09-27T22:00:03-06:00",
+      "mode": "normal",
+      "summary": {
+        "severity": "ALERTA",
+        "critical": 0,
+        "alerts": 1,
+        "problems": 1,
+        "information": 4,
+        "normal": 4,
+        "findings_count": 9
+      },
+      "component_statuses": {
+        "RAM": "ALERTA",
+        "TEMPERATURAS": "INFORMACIÓN",
+        "BATERÍA": "INFORMACIÓN",
+        "SISTEMA": "INFORMACIÓN",
+        "CPU": "NORMAL",
+        "DISCO": "NORMAL",
+        "GPU": "NORMAL"
+      },
+      "findings": [
+        {
+          "code": "RAM_HIGH_USAGE",
+          "title": "Uso elevado de memoria",
+          "description": "Se detecta un uso elevado de memoria; esto no implica por sí solo una falla física.",
+          "evidence": {
+            "usage_percent": 84.5,
+            "available_gb": 2.42,
+            "installed_gb": 16.0,
+            "total_gb": 15.65
+          },
+          "severity": "ALERTA",
+          "recommendation": "Revisar los procesos que consumen mayor cantidad de memoria.",
+          "component": "RAM",
+          "current_value": 84.5,
+          "expected_value": "< 95%",
+          "confidence": "ALTA",
+          "timestamp": "2026-09-27T22:00:02-06:00",
+          "source": "psutil",
+          "rule_id": "RAM_HIGH_USAGE",
+          "priority": 20,
+          "possible_causes": [
+            "Varias aplicaciones abiertas",
+            "Procesos con alto consumo",
+            "Memoria disponible limitada para la carga actual"
+          ]
+        },
+        {
+          "code": "TEMPERATURE_PARTIAL",
+          "title": "Temperaturas parciales",
+          "description": "No hay lecturas térmicas para todos los componentes; los datos ausentes no se interpretan como sobrecalentamiento.",
+          "evidence": {
+            "available_components": [
+              "GPU"
+            ],
+            "components_without_temperature": [
+              "CPU",
+              "ALMACENAMIENTO",
+              "BATERÍA"
+            ]
+          },
+          "severity": "INFORMACIÓN",
+          "recommendation": "",
+          "component": "TEMPERATURA",
+          "current_value": null,
+          "expected_value": null,
+          "confidence": "MEDIA",
+          "timestamp": "2026-09-27T22:00:02-06:00",
+          "source": "psutil/WMI/GPUtil",
+          "rule_id": "TEMPERATURE_PARTIAL",
+          "priority": 100,
+          "possible_causes": []
+        },
+        {
+          "code": "RAM_MODULE_CONFIGURATION",
+          "title": "Configuración de módulos de memoria recopilada",
+          "description": "Se obtuvo la configuración SMBIOS; no se infieren canales ni capacidad máxima física a partir del número de módulos.",
+          "evidence": {
+            "module_count": 2,
+            "slot_count_reported": 2,
+            "occupied_slots_reported": 2,
+            "memory_type": "DDR4",
+            "speed_mhz": 3200,
+            "modules": [
+              {
+                "capacity_gb": 8.0,
+                "memory_type": "DDR4",
+                "speed_mhz": 3200,
+                "device_locator": "Bottom - Slot 1 (left)"
+              },
+              {
+                "capacity_gb": 8.0,
+                "memory_type": "DDR4",
+                "speed_mhz": 3200,
+                "device_locator": "Bottom - Slot 2 (right)"
+              }
+            ]
+          },
+          "severity": "INFORMACIÓN",
+          "recommendation": "",
+          "component": "RAM",
+          "current_value": null,
+          "expected_value": null,
+          "confidence": "MEDIA",
+          "timestamp": "2026-09-27T22:00:02-06:00",
+          "source": "WMI/CIM SMBIOS",
+          "rule_id": "RAM_MODULE_CONFIGURATION",
+          "priority": 100,
+          "possible_causes": []
+        },
+        {
+          "code": "BATTERY_HEALTH_UNAVAILABLE",
+          "title": "Salud de batería no disponible",
+          "description": "No se obtuvieron ambas capacidades necesarias para calcular la salud.",
+          "evidence": {
+            "design_capacity_mwh": null,
+            "full_charge_capacity_mwh": 63032,
+            "cycle_count": 34
+          },
+          "severity": "INFORMACIÓN",
+          "recommendation": "",
+          "component": "BATERÍA",
+          "current_value": null,
+          "expected_value": null,
+          "confidence": "MEDIA",
+          "timestamp": "2026-09-27T22:00:02-06:00",
+          "source": "WMI/CIM batería",
+          "rule_id": "BATTERY_HEALTH_UNAVAILABLE",
+          "priority": 100,
+          "possible_causes": []
+        },
+        {
+          "code": "SYSTEM_INFORMATION",
+          "title": "Información del sistema recopilada",
+          "description": "Se recopilaron versión de Windows, arquitectura y tiempo de actividad cuando estuvieron disponibles.",
+          "evidence": {
+            "os": "Windows-10-10.0.26200-SP0",
+            "architecture": "AMD64",
+            "uptime_seconds": 301477,
+            "pending_updates": null
+          },
+          "severity": "INFORMACIÓN",
+          "recommendation": "",
+          "component": "SISTEMA",
+          "current_value": null,
+          "expected_value": null,
+          "confidence": "ALTA",
+          "timestamp": "2026-09-27T22:00:02-06:00",
+          "source": "platform/psutil",
+          "rule_id": "SYSTEM_INFORMATION",
+          "priority": 100,
+          "possible_causes": []
+        },
+        {
+          "code": "GPU_TEMPERATURE_NORMAL",
+          "title": "Temperatura dentro del umbral: GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+          "description": "La temperatura de la GPU está por debajo del umbral de alerta.",
+          "evidence": {
+            "temperature_c": 38.0,
+            "high_threshold_c": 85.0,
+            "critical_threshold_c": 95.0
+          },
+          "severity": "NORMAL",
+          "recommendation": "",
+          "component": "GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+          "current_value": 38.0,
+          "expected_value": "< 85 °C",
+          "confidence": "ALTA",
+          "timestamp": "2026-09-27T22:00:02-06:00",
+          "source": "WMI/GPUtil",
+          "rule_id": "GPU_TEMPERATURE_NORMAL",
+          "priority": 100,
+          "possible_causes": []
+        },
+        {
+          "code": "CPU_USAGE_NORMAL",
+          "title": "Uso del procesador dentro del umbral",
+          "description": "No se detectó uso sostenido elevado durante la medición.",
+          "evidence": {
+            "samples_percent": [
+              2.8,
+              3.1,
+              10.5,
+              3.0,
+              1.9
+            ],
+            "mean_percent": 4.3
+          },
+          "severity": "NORMAL",
+          "recommendation": "",
+          "component": "CPU",
+          "current_value": 4.3,
+          "expected_value": "< 85% sostenido",
+          "confidence": "ALTA",
+          "timestamp": "2026-09-27T22:00:02-06:00",
+          "source": "psutil",
+          "rule_id": "CPU_USAGE_NORMAL",
+          "priority": 100,
+          "possible_causes": []
+        },
+        {
+          "code": "STORAGE_NO_REPORTED_PROBLEM",
+          "title": "Sin problemas de almacenamiento detectados",
+          "description": "No se detectó poco espacio ni una alerta de salud reportada; la disponibilidad de SMART se informa por separado.",
+          "evidence": {
+            "volume_count": 1,
+            "physical_drive_count": 1
+          },
+          "severity": "NORMAL",
+          "recommendation": "",
+          "component": "ALMACENAMIENTO",
+          "current_value": null,
+          "expected_value": "más de 15 GB y 15% libre",
+          "confidence": "MEDIA",
+          "timestamp": "2026-09-27T22:00:02-06:00",
+          "source": "psutil y WMI/CIM",
+          "rule_id": "STORAGE_NO_REPORTED_PROBLEM",
+          "priority": 100,
+          "possible_causes": []
+        },
+        {
+          "code": "GPU_NO_REPORTED_PROBLEM",
+          "title": "Sin problemas gráficos reportados",
+          "description": "El proveedor no reportó estados problemáticos del controlador; la temperatura se evalúa por separado y puede no estar disponible.",
+          "evidence": {
+            "gpu_count": 2
+          },
+          "severity": "NORMAL",
+          "recommendation": "",
+          "component": "GPU",
+          "current_value": null,
+          "expected_value": null,
+          "confidence": "MEDIA",
+          "timestamp": "2026-09-27T22:00:02-06:00",
+          "source": "WMI/CIM/GPUtil",
+          "rule_id": "GPU_NO_REPORTED_PROBLEM",
+          "priority": 100,
+          "possible_causes": []
+        }
+      ]
+    }
+  }
+}

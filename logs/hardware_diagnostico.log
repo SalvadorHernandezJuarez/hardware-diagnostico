@@ -1,0 +1,278 @@
+2026-09-27 18:42:09,263 | INFO | Aplicación iniciada
+2026-09-27 18:42:09,263 | INFO | Modo normal iniciado
+2026-09-27 18:42:43,402 | INFO | Modo profesional iniciado
+2026-09-27 18:42:59,928 | INFO | Modo profesional finalizado
+2026-09-27 18:46:43,307 | INFO | Aplicación iniciada
+2026-09-27 18:46:43,307 | INFO | Modo normal iniciado
+2026-09-27 18:47:22,635 | INFO | Diagnóstico ejecutado | modo=normal | módulos=3 | estado=NORMAL
+2026-09-27 18:47:37,721 | INFO | Diagnóstico ejecutado | modo=normal | módulos=6 | estado=NORMAL
+2026-09-27 18:48:12,506 | WARNING | No se pudieron consultar sensores de temperatura
+Traceback (most recent call last):
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\temperatura.py", line 20, in obtener
+    temps = psutil.sensors_temperatures()
+AttributeError: module 'psutil' has no attribute 'sensors_temperatures'
+2026-09-27 18:48:57,884 | INFO | Diagnóstico ejecutado | modo=normal | módulos=1 | estado=NORMAL
+2026-09-27 18:49:05,441 | WARNING | No se pudieron consultar sensores de temperatura
+Traceback (most recent call last):
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\temperatura.py", line 20, in obtener
+    temps = psutil.sensors_temperatures()
+AttributeError: module 'psutil' has no attribute 'sensors_temperatures'
+2026-09-27 18:49:07,277 | INFO | Diagnóstico ejecutado | modo=normal | módulos=7 | estado=NORMAL
+2026-09-27 18:49:07,279 | INFO | Generación de reporte solicitada | modo=normal
+2026-09-27 18:49:34,351 | INFO | Diagnóstico de hardware iniciado | modo=normal
+2026-09-27 18:49:34,351 | INFO | Módulo de hardware iniciado | módulo=cpu
+2026-09-27 18:49:36,004 | INFO | psutil no expone sensores de temperatura en esta plataforma
+2026-09-27 18:49:36,004 | INFO | Módulo de hardware iniciado | módulo=ram
+2026-09-27 18:49:36,685 | INFO | Módulo de hardware iniciado | módulo=storage
+2026-09-27 18:49:38,748 | INFO | Módulo de hardware iniciado | módulo=gpu
+2026-09-27 18:49:40,856 | INFO | Módulo de hardware iniciado | módulo=battery
+2026-09-27 18:49:41,698 | WARNING | CIM no pudo consultar BatteryStaticData (root\wmi): Get-CimInstance : Error gen�rico 
+En l�nea: 1 Car�cter: 1
++ Get-CimInstance -Namespace 'root\wmi' -ClassName 'BatteryStaticData'  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (root\wmi:BatteryStaticData:String) [Get-CimInstance], CimException
+    + FullyQualifiedErrorId : HRESULT 0x80041001,Microsoft.Management.Infrastructure.CimCmdlets.GetCimInstanceCommand
+2026-09-27 18:49:42,364 | INFO | Módulo de hardware iniciado | módulo=system
+2026-09-27 18:49:42,394 | INFO | Módulo de hardware iniciado | módulo=temperaturas
+2026-09-27 18:49:42,394 | WARNING | No se pudieron consultar sensores de temperatura
+Traceback (most recent call last):
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\temperatura.py", line 20, in obtener
+    temps = psutil.sensors_temperatures()
+AttributeError: module 'psutil' has no attribute 'sensors_temperatures'
+2026-09-27 18:49:44,948 | INFO | Regla evaluada | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | regla=GPU_TEMPERATURE_NORMAL
+2026-09-27 18:49:44,948 | INFO | Hallazgo generado | codigo=GPU_TEMPERATURE_NORMAL | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | severidad=NORMAL
+2026-09-27 18:49:44,949 | INFO | Regla evaluada | componente=TEMPERATURA | regla=TEMPERATURE_PARTIAL
+2026-09-27 18:49:44,949 | INFO | Hallazgo generado | codigo=TEMPERATURE_PARTIAL | componente=TEMPERATURA | severidad=INFORMACIÓN
+2026-09-27 18:49:44,949 | INFO | Regla evaluada | componente=CPU | regla=CPU_USAGE_NORMAL
+2026-09-27 18:49:44,949 | INFO | Hallazgo generado | codigo=CPU_USAGE_NORMAL | componente=CPU | severidad=NORMAL
+2026-09-27 18:49:44,949 | INFO | Regla evaluada | componente=RAM | regla=RAM_MODULE_CONFIGURATION
+2026-09-27 18:49:44,949 | INFO | Hallazgo generado | codigo=RAM_MODULE_CONFIGURATION | componente=RAM | severidad=INFORMACIÓN
+2026-09-27 18:49:44,949 | INFO | Regla evaluada | componente=RAM | regla=RAM_HIGH_USAGE
+2026-09-27 18:49:44,949 | INFO | Hallazgo generado | codigo=RAM_HIGH_USAGE | componente=RAM | severidad=ALERTA
+2026-09-27 18:49:44,949 | INFO | Regla evaluada | componente=ALMACENAMIENTO | regla=STORAGE_NO_REPORTED_PROBLEM
+2026-09-27 18:49:44,949 | INFO | Hallazgo generado | codigo=STORAGE_NO_REPORTED_PROBLEM | componente=ALMACENAMIENTO | severidad=NORMAL
+2026-09-27 18:49:44,949 | INFO | Regla evaluada | componente=GPU | regla=GPU_NO_REPORTED_PROBLEM
+2026-09-27 18:49:44,949 | INFO | Hallazgo generado | codigo=GPU_NO_REPORTED_PROBLEM | componente=GPU | severidad=NORMAL
+2026-09-27 18:49:44,949 | INFO | Regla evaluada | componente=BATERÍA | regla=BATTERY_HEALTH_UNAVAILABLE
+2026-09-27 18:49:44,949 | INFO | Hallazgo generado | codigo=BATTERY_HEALTH_UNAVAILABLE | componente=BATERÍA | severidad=INFORMACIÓN
+2026-09-27 18:49:44,949 | INFO | Regla evaluada | componente=SISTEMA | regla=SYSTEM_INFORMATION
+2026-09-27 18:49:44,949 | INFO | Hallazgo generado | codigo=SYSTEM_INFORMATION | componente=SISTEMA | severidad=INFORMACIÓN
+2026-09-27 18:49:44,949 | INFO | Módulo de procesos iniciado | motivo=RAM elevada
+2026-09-27 18:49:45,345 | INFO | Diagnóstico finalizado | hallazgos=9 | alertas=1 | críticos=0 | estado=ALERTA
+2026-09-27 18:50:15,494 | INFO | Aplicación iniciada
+2026-09-27 18:50:15,499 | INFO | Modo normal iniciado
+2026-09-27 18:50:18,214 | INFO | Hallazgo de seguridad | codigo=SEC_FIREWALL_ENABLED | severidad=NORMAL
+2026-09-27 18:50:18,244 | INFO | Aplicación finalizada
+2026-09-27 18:50:19,202 | INFO | Aplicación iniciada
+2026-09-27 18:50:19,204 | INFO | Modo normal iniciado
+2026-09-27 18:50:19,235 | INFO | Modo profesional iniciado
+2026-09-27 18:50:24,036 | INFO | Hallazgo de seguridad | codigo=SEC_FIREWALL_ENABLED | severidad=NORMAL
+2026-09-27 18:50:24,062 | INFO | Modo profesional finalizado
+2026-09-27 18:50:24,079 | INFO | Aplicación finalizada
+2026-09-27 19:03:17,792 | INFO | Aplicación iniciada
+2026-09-27 19:03:17,792 | INFO | Modo normal iniciado
+2026-09-27 19:03:17,848 | INFO | Aplicación finalizada
+2026-09-27 19:03:19,029 | INFO | Aplicación iniciada
+2026-09-27 19:03:19,029 | INFO | Modo normal iniciado
+2026-09-27 19:03:19,056 | INFO | Modo profesional iniciado
+2026-09-27 19:03:19,096 | INFO | Modo profesional finalizado
+2026-09-27 19:03:19,110 | INFO | Aplicación finalizada
+2026-09-27 19:04:31,974 | INFO | Aplicación iniciada
+2026-09-27 19:04:31,974 | INFO | Modo normal iniciado
+2026-09-27 19:04:32,026 | INFO | Aplicación finalizada
+2026-09-27 19:04:33,080 | INFO | Aplicación iniciada
+2026-09-27 19:04:33,080 | INFO | Modo normal iniciado
+2026-09-27 19:04:33,102 | INFO | Modo profesional iniciado
+2026-09-27 19:04:33,145 | INFO | Modo profesional finalizado
+2026-09-27 19:04:33,173 | INFO | Aplicación finalizada
+2026-09-27 19:06:45,926 | INFO | Aplicación iniciada
+2026-09-27 19:06:45,926 | INFO | Modo normal iniciado
+2026-09-27 19:06:45,976 | INFO | Aplicación finalizada
+2026-09-27 19:06:47,011 | INFO | Aplicación iniciada
+2026-09-27 19:06:47,011 | INFO | Modo normal iniciado
+2026-09-27 19:06:47,035 | INFO | Modo profesional iniciado
+2026-09-27 19:06:47,077 | INFO | Modo profesional finalizado
+2026-09-27 19:06:47,089 | INFO | Aplicación finalizada
+2026-09-27 19:18:31,318 | INFO | Aplicación iniciada
+2026-09-27 19:18:31,318 | INFO | Modo normal iniciado
+2026-09-27 19:18:31,375 | INFO | Modo profesional iniciado
+2026-09-27 19:18:31,417 | INFO | Modo profesional finalizado
+2026-09-27 19:18:31,425 | INFO | Aplicación finalizada
+2026-09-27 19:20:30,762 | INFO | Aplicación iniciada
+2026-09-27 19:20:30,762 | INFO | Modo normal iniciado
+2026-09-27 19:20:30,819 | INFO | Modo profesional iniciado
+2026-09-27 19:20:30,864 | INFO | Modo profesional finalizado
+2026-09-27 19:20:30,872 | INFO | Aplicación finalizada
+2026-09-27 19:22:03,645 | INFO | Aplicación iniciada
+2026-09-27 19:22:03,645 | INFO | Modo normal iniciado
+2026-09-27 19:22:03,700 | INFO | Modo profesional iniciado
+2026-09-27 19:22:03,734 | INFO | Modo profesional finalizado
+2026-09-27 19:22:03,746 | INFO | Aplicación finalizada
+2026-09-27 21:31:50,622 | INFO | Aplicación iniciada
+2026-09-27 21:31:50,622 | INFO | Modo normal iniciado
+2026-09-27 21:31:50,676 | INFO | Modo profesional iniciado
+2026-09-27 21:31:50,732 | INFO | Modo profesional finalizado
+2026-09-27 21:31:50,741 | INFO | Aplicación finalizada
+2026-09-27 21:32:50,588 | INFO | Aplicación iniciada
+2026-09-27 21:32:50,588 | INFO | Modo normal iniciado
+2026-09-27 21:32:50,652 | INFO | Modo profesional iniciado
+2026-09-27 21:32:50,691 | INFO | Modo profesional finalizado
+2026-09-27 21:32:50,703 | INFO | Aplicación finalizada
+2026-09-27 21:33:28,776 | INFO | Aplicación iniciada
+2026-09-27 21:33:28,776 | INFO | Modo normal iniciado
+2026-09-27 21:33:28,824 | INFO | Modo profesional iniciado
+2026-09-27 21:33:28,872 | INFO | Modo profesional finalizado
+2026-09-27 21:33:28,883 | INFO | Aplicación finalizada
+2026-09-27 21:34:10,717 | INFO | Aplicación iniciada
+2026-09-27 21:34:10,717 | INFO | Modo normal iniciado
+2026-09-27 21:34:10,781 | INFO | Modo profesional iniciado
+2026-09-27 21:34:10,818 | INFO | Modo profesional finalizado
+2026-09-27 21:34:10,828 | INFO | Aplicación finalizada
+2026-09-27 21:39:38,612 | INFO | Aplicación iniciada
+2026-09-27 21:39:38,612 | INFO | Modo normal iniciado
+2026-09-27 21:39:38,666 | INFO | Modo profesional iniciado
+2026-09-27 21:39:38,711 | INFO | Modo profesional finalizado
+2026-09-27 21:39:38,728 | INFO | Aplicación finalizada
+2026-09-27 21:40:22,054 | INFO | Aplicación iniciada
+2026-09-27 21:40:22,054 | INFO | Modo normal iniciado
+2026-09-27 21:40:22,118 | INFO | Modo profesional iniciado
+2026-09-27 21:40:22,163 | INFO | Modo profesional finalizado
+2026-09-27 21:40:22,166 | INFO | Aplicación finalizada
+2026-09-27 21:41:14,420 | INFO | Aplicación iniciada
+2026-09-27 21:41:14,420 | INFO | Modo normal iniciado
+2026-09-27 21:41:14,465 | INFO | Diagnóstico de hardware iniciado | modo=normal
+2026-09-27 21:41:14,465 | INFO | Módulo de hardware iniciado | módulo=cpu
+2026-09-27 21:41:16,119 | INFO | psutil no expone sensores de temperatura en esta plataforma
+2026-09-27 21:41:16,119 | INFO | Módulo de hardware iniciado | módulo=ram
+2026-09-27 21:41:16,837 | INFO | Módulo de hardware iniciado | módulo=storage
+2026-09-27 21:41:18,354 | INFO | Módulo de hardware iniciado | módulo=gpu
+2026-09-27 21:41:19,454 | INFO | Módulo de hardware iniciado | módulo=battery
+2026-09-27 21:41:20,303 | WARNING | CIM no pudo consultar BatteryStaticData (root\wmi): Get-CimInstance : Error genérico 
+En línea: 1 Carácter: 1
++ Get-CimInstance -Namespace 'root\wmi' -ClassName 'BatteryStaticData'  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (root\wmi:BatteryStaticData:String) [Get-CimInstance], CimException
+    + FullyQualifiedErrorId : HRESULT 0x80041001,Microsoft.Management.Infrastructure.CimCmdlets.GetCimInstanceCommand
+2026-09-27 21:41:20,999 | INFO | Módulo de hardware iniciado | módulo=system
+2026-09-27 21:41:21,004 | INFO | Módulo de hardware iniciado | módulo=temperaturas
+2026-09-27 21:41:21,004 | WARNING | No se pudieron consultar sensores de temperatura
+Traceback (most recent call last):
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\temperatura.py", line 20, in obtener
+    temps = psutil.sensors_temperatures()
+AttributeError: module 'psutil' has no attribute 'sensors_temperatures'
+2026-09-27 21:41:23,551 | INFO | Regla evaluada | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | regla=GPU_TEMPERATURE_NORMAL
+2026-09-27 21:41:23,551 | INFO | Hallazgo generado | codigo=GPU_TEMPERATURE_NORMAL | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | severidad=NORMAL
+2026-09-27 21:41:23,551 | INFO | Regla evaluada | componente=TEMPERATURA | regla=TEMPERATURE_PARTIAL
+2026-09-27 21:41:23,551 | INFO | Hallazgo generado | codigo=TEMPERATURE_PARTIAL | componente=TEMPERATURA | severidad=INFORMACIÓN
+2026-09-27 21:41:23,551 | INFO | Regla evaluada | componente=CPU | regla=CPU_USAGE_NORMAL
+2026-09-27 21:41:23,551 | INFO | Hallazgo generado | codigo=CPU_USAGE_NORMAL | componente=CPU | severidad=NORMAL
+2026-09-27 21:41:23,551 | INFO | Regla evaluada | componente=RAM | regla=RAM_MODULE_CONFIGURATION
+2026-09-27 21:41:23,551 | INFO | Hallazgo generado | codigo=RAM_MODULE_CONFIGURATION | componente=RAM | severidad=INFORMACIÓN
+2026-09-27 21:41:23,551 | INFO | Regla evaluada | componente=RAM | regla=RAM_HIGH_USAGE
+2026-09-27 21:41:23,551 | INFO | Hallazgo generado | codigo=RAM_HIGH_USAGE | componente=RAM | severidad=ALERTA
+2026-09-27 21:41:23,551 | INFO | Regla evaluada | componente=ALMACENAMIENTO | regla=STORAGE_NO_REPORTED_PROBLEM
+2026-09-27 21:41:23,551 | INFO | Hallazgo generado | codigo=STORAGE_NO_REPORTED_PROBLEM | componente=ALMACENAMIENTO | severidad=NORMAL
+2026-09-27 21:41:23,551 | INFO | Regla evaluada | componente=GPU | regla=GPU_NO_REPORTED_PROBLEM
+2026-09-27 21:41:23,551 | INFO | Hallazgo generado | codigo=GPU_NO_REPORTED_PROBLEM | componente=GPU | severidad=NORMAL
+2026-09-27 21:41:23,551 | INFO | Regla evaluada | componente=BATERÍA | regla=BATTERY_HEALTH_UNAVAILABLE
+2026-09-27 21:41:23,551 | INFO | Hallazgo generado | codigo=BATTERY_HEALTH_UNAVAILABLE | componente=BATERÍA | severidad=INFORMACIÓN
+2026-09-27 21:41:23,551 | INFO | Regla evaluada | componente=SISTEMA | regla=SYSTEM_INFORMATION
+2026-09-27 21:41:23,551 | INFO | Hallazgo generado | codigo=SYSTEM_INFORMATION | componente=SISTEMA | severidad=INFORMACIÓN
+2026-09-27 21:41:23,551 | INFO | Módulo de procesos iniciado | motivo=RAM elevada
+2026-09-27 21:41:23,980 | INFO | Diagnóstico finalizado | hallazgos=9 | alertas=1 | críticos=0 | estado=ALERTA
+2026-09-27 21:41:23,999 | INFO | Aplicación finalizada
+2026-09-27 21:45:47,433 | INFO | Aplicación iniciada
+2026-09-27 21:45:47,433 | INFO | Modo normal iniciado
+2026-09-27 21:48:26,950 | INFO | Modo profesional iniciado
+2026-09-27 21:53:48,989 | INFO | Aplicación iniciada
+2026-09-27 21:53:48,992 | INFO | Modo normal iniciado
+2026-09-27 21:54:19,031 | INFO | Modo profesional iniciado
+2026-09-27 21:54:28,229 | INFO | Modo profesional finalizado
+2026-09-27 21:55:01,814 | INFO | Diagnóstico ejecutado | modo=normal | módulos=1 | estado=INFORMACIÓN
+2026-09-27 21:55:58,729 | INFO | Diagnóstico ejecutado | modo=normal | módulos=6 | estado=ALERTA
+2026-09-27 21:56:09,303 | INFO | psutil no expone sensores de temperatura en esta plataforma
+2026-09-27 21:57:07,957 | INFO | psutil no expone sensores de temperatura en esta plataforma
+2026-09-27 21:57:16,434 | WARNING | CIM no pudo consultar BatteryStaticData (root\wmi): Get-CimInstance : Error gen�rico 
+En l�nea: 1 Car�cter: 1
++ Get-CimInstance -Namespace 'root\wmi' -ClassName 'BatteryStaticData'  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (root\wmi:BatteryStaticData:String) [Get-CimInstance], CimException
+    + FullyQualifiedErrorId : HRESULT 0x80041001,Microsoft.Management.Infrastructure.CimCmdlets.GetCimInstanceCommand
+2026-09-27 21:59:39,983 | INFO | Diagnóstico ejecutado | modo=normal | módulos=6 | estado=ALERTA
+2026-09-27 21:59:51,489 | INFO | Diagnóstico de hardware iniciado | modo=normal
+2026-09-27 21:59:51,489 | INFO | Módulo de hardware iniciado | módulo=cpu
+2026-09-27 21:59:53,220 | INFO | psutil no expone sensores de temperatura en esta plataforma
+2026-09-27 21:59:53,220 | INFO | Módulo de hardware iniciado | módulo=ram
+2026-09-27 21:59:54,078 | INFO | Módulo de hardware iniciado | módulo=storage
+2026-09-27 21:59:55,920 | INFO | Módulo de hardware iniciado | módulo=gpu
+2026-09-27 21:59:58,172 | INFO | Módulo de hardware iniciado | módulo=battery
+2026-09-27 21:59:59,154 | WARNING | CIM no pudo consultar BatteryStaticData (root\wmi): Get-CimInstance : Error gen�rico 
+En l�nea: 1 Car�cter: 1
++ Get-CimInstance -Namespace 'root\wmi' -ClassName 'BatteryStaticData'  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (root\wmi:BatteryStaticData:String) [Get-CimInstance], CimException
+    + FullyQualifiedErrorId : HRESULT 0x80041001,Microsoft.Management.Infrastructure.CimCmdlets.GetCimInstanceCommand
+2026-09-27 22:00:00,018 | INFO | Módulo de hardware iniciado | módulo=system
+2026-09-27 22:00:00,024 | INFO | Módulo de hardware iniciado | módulo=temperaturas
+2026-09-27 22:00:00,024 | WARNING | No se pudieron consultar sensores de temperatura
+Traceback (most recent call last):
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\temperatura.py", line 20, in obtener
+    temps = psutil.sensors_temperatures()
+AttributeError: module 'psutil' has no attribute 'sensors_temperatures'
+2026-09-27 22:00:02,566 | INFO | Regla evaluada | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | regla=GPU_TEMPERATURE_NORMAL
+2026-09-27 22:00:02,566 | INFO | Hallazgo generado | codigo=GPU_TEMPERATURE_NORMAL | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | severidad=NORMAL
+2026-09-27 22:00:02,566 | INFO | Regla evaluada | componente=TEMPERATURA | regla=TEMPERATURE_PARTIAL
+2026-09-27 22:00:02,566 | INFO | Hallazgo generado | codigo=TEMPERATURE_PARTIAL | componente=TEMPERATURA | severidad=INFORMACIÓN
+2026-09-27 22:00:02,566 | INFO | Regla evaluada | componente=CPU | regla=CPU_USAGE_NORMAL
+2026-09-27 22:00:02,566 | INFO | Hallazgo generado | codigo=CPU_USAGE_NORMAL | componente=CPU | severidad=NORMAL
+2026-09-27 22:00:02,568 | INFO | Regla evaluada | componente=RAM | regla=RAM_MODULE_CONFIGURATION
+2026-09-27 22:00:02,568 | INFO | Hallazgo generado | codigo=RAM_MODULE_CONFIGURATION | componente=RAM | severidad=INFORMACIÓN
+2026-09-27 22:00:02,568 | INFO | Regla evaluada | componente=RAM | regla=RAM_HIGH_USAGE
+2026-09-27 22:00:02,568 | INFO | Hallazgo generado | codigo=RAM_HIGH_USAGE | componente=RAM | severidad=ALERTA
+2026-09-27 22:00:02,568 | INFO | Regla evaluada | componente=ALMACENAMIENTO | regla=STORAGE_NO_REPORTED_PROBLEM
+2026-09-27 22:00:02,568 | INFO | Hallazgo generado | codigo=STORAGE_NO_REPORTED_PROBLEM | componente=ALMACENAMIENTO | severidad=NORMAL
+2026-09-27 22:00:02,568 | INFO | Regla evaluada | componente=GPU | regla=GPU_NO_REPORTED_PROBLEM
+2026-09-27 22:00:02,568 | INFO | Hallazgo generado | codigo=GPU_NO_REPORTED_PROBLEM | componente=GPU | severidad=NORMAL
+2026-09-27 22:00:02,568 | INFO | Regla evaluada | componente=BATERÍA | regla=BATTERY_HEALTH_UNAVAILABLE
+2026-09-27 22:00:02,568 | INFO | Hallazgo generado | codigo=BATTERY_HEALTH_UNAVAILABLE | componente=BATERÍA | severidad=INFORMACIÓN
+2026-09-27 22:00:02,568 | INFO | Regla evaluada | componente=SISTEMA | regla=SYSTEM_INFORMATION
+2026-09-27 22:00:02,568 | INFO | Hallazgo generado | codigo=SYSTEM_INFORMATION | componente=SISTEMA | severidad=INFORMACIÓN
+2026-09-27 22:00:02,568 | INFO | Módulo de procesos iniciado | motivo=RAM elevada
+2026-09-27 22:00:03,062 | INFO | Diagnóstico finalizado | hallazgos=9 | alertas=1 | críticos=0 | estado=ALERTA
+2026-09-27 22:01:21,130 | INFO | Prueba avanzada iniciada | componente=RED | timestamp=2026-09-27T22:01:21-06:00
+2026-09-27 22:01:21,130 | INFO | Diagnóstico automático de red iniciado
+2026-09-27 22:01:27,490 | INFO | Hallazgo de red generado | codigo=NETWORK_CONNECTIVITY_NORMAL | severidad=NORMAL
+2026-09-27 22:01:27,490 | INFO | Diagnóstico automático de red finalizado | estado=NORMAL | hallazgos=1
+2026-09-27 22:01:27,490 | INFO | Prueba avanzada finalizada | código=NETWORK_CONNECTIVITY_NORMAL | severidad=NORMAL | duración=6.38s | errores=0
+2026-09-27 22:01:56,206 | ERROR | Error no controlado durante el diagnóstico de red
+Traceback (most recent call last):
+  File "C:\Users\salva\Desktop\hardware-diagnostico\ui\red.py", line 81, in _collect
+    return operation(*args, **kwargs)
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\red.py", line 470, in ping
+    destination = _validate_destination(destination)
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\red.py", line 1229, in _validate_destination
+    raise ValueError("Destino de red vacío o no válido.")
+ValueError: Destino de red vacío o no válido.
+2026-09-27 22:03:35,714 | INFO | Modo profesional iniciado
+2026-09-27 22:04:23,428 | INFO | psutil no expone sensores de temperatura en esta plataforma
+2026-09-27 22:05:05,273 | INFO | Modo profesional finalizado
+2026-09-27 22:26:35,604 | INFO | Diagnóstico ejecutado | modo=normal | módulos=1 | estado=INFORMACIÓN
+2026-09-27 22:27:33,407 | INFO | Modo profesional iniciado
+2026-09-27 22:27:45,329 | INFO | Modo profesional finalizado
+2026-09-27 22:34:24,707 | INFO | Aplicación iniciada
+2026-09-27 22:34:24,707 | INFO | Modo normal iniciado
+2026-09-27 22:34:44,165 | INFO | Modo profesional iniciado
+2026-09-27 22:34:50,775 | INFO | Modo profesional finalizado
+2026-09-27 22:36:30,787 | INFO | Aplicación iniciada
+2026-09-27 22:36:30,787 | INFO | Modo normal iniciado
+2026-09-27 22:36:37,730 | INFO | Modo profesional iniciado
+2026-09-27 22:36:43,568 | INFO | Modo profesional finalizado
+2026-09-27 22:36:53,868 | INFO | Diagnóstico ejecutado | modo=normal | módulos=6 | estado=ALERTA
+2026-09-27 22:38:03,430 | INFO | Modo profesional iniciado
+2026-09-27 22:38:41,255 | INFO | Modo profesional finalizado
+2026-09-27 22:39:33,837 | INFO | Modo profesional iniciado
+2026-09-27 22:39:58,611 | INFO | Modo profesional finalizado
+2026-09-27 22:40:10,427 | INFO | Modo profesional iniciado
+2026-09-27 22:43:01,645 | INFO | Modo profesional finalizado
+2026-09-27 22:43:36,933 | INFO | Aplicación iniciada
+2026-09-27 22:43:36,933 | INFO | Modo normal iniciado

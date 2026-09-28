@@ -2,8 +2,13 @@
 modules/temperatura.py - Temperaturas del sistema
 """
 
+import logging
+
 import psutil
 from modules.base import ModuloBase
+
+
+logger = logging.getLogger("hardware_diagnostico")
 
 
 class TemperaturaInfo(ModuloBase):
@@ -23,7 +28,10 @@ class TemperaturaInfo(ModuloBase):
                             "critica": entrada.critical,
                         }
         except Exception:
-            pass
+            logger.warning(
+                "No se pudieron consultar sensores de temperatura",
+                exc_info=True,
+            )
         return datos if datos else {"estado": "No disponible en este sistema"}
 
     def mostrar(self, datos: dict, profesional: bool = False):

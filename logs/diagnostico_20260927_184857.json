@@ -1,0 +1,38 @@
+{
+  "fecha": "2026-09-27T18:48:57.868690",
+  "modulos": {
+    "Batería": {
+      "Porcentaje": "55.0 %",
+      "Conectada a corriente": "No",
+      "Tiempo restante estimado": "0h 52m",
+      "Estado": "🟡 Moderado"
+    },
+    "Resultado": {
+      "fecha": "2026-09-27T18:48:57-06:00",
+      "modo": "normal",
+      "estado": "NORMAL",
+      "resultados": [
+        {
+          "code": "SYSTEM_HEALTH",
+          "title": "Estado general del equipo",
+          "description": "Evaluación de salud: OK (puntuación 100/100).",
+          "evidence": {
+            "score": 100,
+            "hallazgos": []
+          },
+          "severity": "NORMAL",
+          "recommendation": "Mantén el equipo actualizado y revisa diagnósticos periódicos.",
+          "component": "SISTEMA",
+          "current_value": null,
+          "expected_value": null,
+          "confidence": "MEDIA",
+          "timestamp": "2026-09-27T18:48:57-06:00",
+          "source": "Desconocida",
+          "rule_id": "",
+          "priority": 100,
+          "possible_causes": []
+        }
+      ]
+    }
+  }
+}

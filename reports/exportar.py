@@ -6,6 +6,7 @@ Requiere: reportlab
 import os
 import sys
 from datetime import datetime
+from xml.sax.saxutils import escape
 
 try:
     from reportlab.lib.pagesizes import A4
@@ -27,6 +28,116 @@ RUTA_REPORTES = os.path.join(RUTA_PROYECTO, "reports")
 
 
 class ExportarPDF:
+
+    @staticmethod
+    def generar_reporte_tecnico(reporte: dict, ruta: str):
+        """Write the structured technical report to an already reserved path."""
+        if not REPORTLAB_DISPONIBLE:
+            raise RuntimeError("reportlab no está instalado.")
+
+        from reports.service import _flatten_lines
+
+        doc = SimpleDocTemplate(
+            ruta,
+            pagesize=A4,
+            rightMargin=1.8 * cm,
+            leftMargin=1.8 * cm,
+            topMargin=1.6 * cm,
+            bottomMargin=1.6 * cm,
+            title="Hardware Diagnóstico - Reporte Técnico",
+            author="Hardware Diagnóstico",
+        )
+        styles = getSampleStyleSheet()
+        title_style = ParagraphStyle(
+            "TechnicalReportTitle",
+            parent=styles["Title"],
+            textColor=colors.HexColor("#0d47a1"),
+            alignment=1,
+            spaceAfter=4,
+        )
+        subtitle_style = ParagraphStyle(
+            "TechnicalReportSubtitle",
+            parent=styles["Normal"],
+            textColor=colors.HexColor("#5f6c7b"),
+            alignment=1,
+            spaceAfter=14,
+        )
+        section_style = ParagraphStyle(
+            "TechnicalReportSection",
+            parent=styles["Heading2"],
+            textColor=colors.HexColor("#1565c0"),
+            spaceBefore=12,
+            spaceAfter=6,
+        )
+        body_style = ParagraphStyle(
+            "TechnicalReportBody",
+            parent=styles["BodyText"],
+            fontName="Courier",
+            fontSize=7.5,
+            leading=9,
+            wordWrap="CJK",
+        )
+        summary = reporte.get("summary") or {}
+        equipment = reporte.get("equipment") or {}
+        contents = [
+            Paragraph("HARDWARE DIAGNÓSTICO", title_style),
+            Paragraph("Reporte Técnico", subtitle_style),
+            Paragraph(
+                escape(
+                    "Equipo: {computer} | Usuario: {user} | Fecha: {date}".format(
+                        computer=equipment.get("computer", "DESCONOCIDO"),
+                        user=equipment.get("user", "DESCONOCIDO"),
+                        date=reporte.get("created_at", "DESCONOCIDO"),
+                    )
+                ),
+                styles["Normal"],
+            ),
+            Spacer(1, 8),
+            Paragraph("ESTADO GENERAL", section_style),
+            Paragraph(
+                escape(
+                    "{severity} | Alertas: {alerts} | Críticos: {critical}".format(
+                        severity=summary.get("severity", "INFORMACIÓN"),
+                        alerts=summary.get("alerts", 0),
+                        critical=summary.get("critical", 0),
+                    )
+                ),
+                styles["Normal"],
+            ),
+        ]
+        for key, title in (
+            ("hardware", "RESUMEN DEL EQUIPO"),
+            ("diagnosis", "DIAGNÓSTICO"),
+            ("network", "RED"),
+            ("security", "SEGURIDAD"),
+            ("maintenance", "MANTENIMIENTO"),
+            ("tests", "PRUEBAS"),
+            ("findings", "HALLAZGOS"),
+            ("recommendations", "RECOMENDACIONES"),
+            ("collection_errors", "ERRORES DE RECOLECCIÓN"),
+        ):
+            contents.append(Paragraph(escape(title), section_style))
+            lines = _flatten_lines(reporte.get(key))
+            if not lines:
+                lines = ["No disponible"]
+            for line in lines:
+                contents.append(Paragraph(escape(str(line)), body_style))
+        doc.build(contents)
+
+    @staticmethod
+    def generar_diagnostico(ejecucion):
+        """Export the deterministic diagnosis findings without raw identifiers."""
+        resultados = {
+            "Diagnóstico": {
+                "timestamp": ejecucion.timestamp,
+                "mode": ejecucion.mode,
+                "summary": ejecucion.summary,
+                "findings": [
+                    finding.to_dict() for finding in ejecucion.results
+                ],
+            }
+        }
+        ExportarPDF.generar(resultados)
 
     @staticmethod
     def generar(resultados: dict):
@@ -119,7 +230,13 @@ class ExportarPDF:
             historia.append(Paragraph(f"▸ {modulo.upper()}", seccion_estilo))
             filas = ExportarPDF._aplanar(datos)
             if filas:
-                tabla_datos = [[Paragraph(f"<b>{k}</b>", info_estilo), Paragraph(str(v), info_estilo)] for k, v in filas]
+                tabla_datos = [
+                    [
+                        Paragraph(f"<b>{escape(str(k))}</b>", info_estilo),
+                        Paragraph(escape(str(v)), info_estilo),
+                    ]
+                    for k, v in filas
+                ]
                 tabla = Table(tabla_datos, colWidths=[6 * cm, 10.5 * cm])
                 tabla.setStyle(TableStyle([
                     ("BACKGROUND", (0, 0), (-1, 0), gris),
@@ -143,6 +260,19 @@ class ExportarPDF:
 
     @staticmethod
     def _resumen(resultados: dict):
+        diagnostico = resultados.get("Diagnóstico")
+        if isinstance(diagnostico, dict) and isinstance(
+            diagnostico.get("summary"), dict
+        ):
+            summary = diagnostico["summary"]
+            return [
+                ["Estado general", summary.get("severity", "INFORMACIÓN")],
+                ["Problemas", str(summary.get("problems", 0))],
+                ["Alertas", str(summary.get("alerts", 0))],
+                ["Críticos", str(summary.get("critical", 0))],
+                ["Hallazgos informativos", str(summary.get("information", 0))],
+            ]
+
         fila = []
         cpu = resultados.get("CPU", {})
         ram = resultados.get("RAM", {})
@@ -208,6 +338,14 @@ class ExportarPDF:
                         filas += ExportarPDF._aplanar(item, prefijo=f"#{i} - ")
                 elif isinstance(v, dict):
                     filas += ExportarPDF._aplanar(v, prefijo=f"{k} - ")
+                elif isinstance(v, list):
+                    for i, item in enumerate(v, 1):
+                        if isinstance(item, dict):
+                            filas += ExportarPDF._aplanar(
+                                item, prefijo=f"{k} #{i} - "
+                            )
+                        else:
+                            filas.append((f"{prefijo}{k} #{i}", str(item)))
                 else:
                     filas.append((f"{prefijo}{k}", str(v)))
         return filas
