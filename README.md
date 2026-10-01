@@ -73,16 +73,6 @@ La opción **Hardware** está disponible en modo Normal y Profesional. Presenta 
 
 La capacidad máxima SMBIOS se etiqueta como reportada, no como confirmada. Los conectores libres M.2/SATA no se deducen de las unidades detectadas: solo se muestran cuando una fuente del catálogo informa interfaces; de otro modo aparecen como desconocidos. Los datos completos quedan disponibles como diccionarios para la futura capa de diagnóstico y reportes.
 
-## Diagnóstico de red
-
-La opción **5. Diagnóstico de red** en modo Normal y **7. Red** en modo Profesional ofrecen adaptadores, configuración IP, gateway, DNS, conectividad externa, ping, traceroute y diagnóstico automático por capas. `modules/red.py` devuelve estructuras `NetworkAdapter`, `NetworkConfiguration`, `PingResult`, `DnsResult`, `GatewayResult` y `NetworkDiagnosticResult`; `ui/red.py` las presenta en CMD y guarda diagnósticos/acciones en el historial.
-
-La inspección usa `psutil`, PowerShell `Get-NetIPConfiguration`/`Get-NetAdapter`, `netsh wlan show interfaces`, `ping`, `tracert`, resolución DNS UDP y sockets TCP. DNS/IP/gateway se prueban antes de las conexiones externas; gateway inaccesible detiene las pruebas posteriores. La conectividad externa se verifica con conexiones TCP a destinos IP en puerto 443 y DNS se comprueba independientemente. Un salto `* * *` no se trata como fallo.
-
-La latencia y pérdida de paquetes se miden con cuatro pings; los límites se centralizan en `modules/red.py` (`150 ms` de latencia promedio y `10%` de pérdida). `169.254.x.x` se presenta como indicio de posible problema DHCP, no como causa confirmada. Los errores o proveedores ausentes no detienen las otras pruebas.
-
-`[9] Renovar configuración IP` solicita confirmación explícita antes de `ipconfig /release` y `ipconfig /renew`. `[10] Restablecimiento de red` solo aparece en el submenú de red del modo Profesional y requiere escribir literalmente `CONFIRMAR`; ejecuta `netsh winsock reset` y `netsh int ip reset` y puede requerir reiniciar Windows. Estas acciones no se ejecutan desde el diagnóstico automático.
-
 ---
 ## Autor
 
