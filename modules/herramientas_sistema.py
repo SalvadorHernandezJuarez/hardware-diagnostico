@@ -108,6 +108,25 @@ POWERSHELL_QUERIES = {
         "0,[Math]::Min(300,($_.Message -replace '\\s+',' ').Length))}} "
         "| ConvertTo-Json -Depth 3 -Compress"
     ),
+    "software": (
+        "$ErrorActionPreference='SilentlyContinue'; "
+        "$paths=@("
+        "'HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*',"
+        "'HKLM:\\Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*',"
+        "'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*',"
+        "'HKCU:\\Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*'"
+        "); "
+        "$apps=@(foreach($path in $paths){"
+        "Get-ItemProperty -Path $path -ErrorAction SilentlyContinue | "
+        "Where-Object {$_.DisplayName -and $_.DisplayName.Trim()} | "
+        "Select-Object @{n='Name';e={$_.DisplayName.Trim()}},"
+        "@{n='Version';e={$_.DisplayVersion}},"
+        "@{n='Publisher';e={$_.Publisher}},"
+        "@{n='InstallDate';e={$_.InstallDate}},"
+        "@{n='InstallLocation';e={$_.InstallLocation}}"
+        "}); "
+        "ConvertTo-Json -InputObject $apps -Depth 3 -Compress"
+    ),
 }
 
 WINDOWS_INFO_QUERY = (
@@ -381,6 +400,32 @@ class SystemToolsDiagnostics:
             description=(
                 "No fue posible obtener información de controladores."
                 if error else "Controladores consultados; no se modificó el equipo."
+            ),
+        )
+
+    def installed_software(self):
+        rows, error = self._query("software")
+        software = [
+            app for app in (rows or [])
+            if isinstance(app, dict) and app.get("Name")
+        ]
+        data = {
+            "software": software,
+            "count": len(software),
+            "available": error is None,
+        }
+        if error:
+            data["error"] = error
+        return self._report(
+            "SYSTEM_TOOLS_INSTALLED_SOFTWARE",
+            "Software instalado",
+            data,
+            "Registro de desinstalación de Windows (HKLM/HKCU, 32/64 bits)",
+            description=(
+                "No fue posible consultar el software instalado."
+                if error else
+                "Software registrado consultado en modo de solo lectura; "
+                "aplicaciones portables podrían no aparecer."
             ),
         )
 

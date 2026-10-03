@@ -1,0 +1,32 @@
+# Python bytecode and test/tool caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# PyInstaller build output
+/build/
+/dist/
+/*.spec.bak
+
+# Runtime logs, reports, and local databases
+/logs/*.log
+/logs/*.json
+/reports/*.pdf
+/database/history.db
+/datos_ampliacion/compatibilidad.db
+
+# Local editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

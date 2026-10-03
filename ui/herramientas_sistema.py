@@ -36,7 +36,8 @@ class SystemToolsMenu:
             "7": self._network,
             "8": self._events,
             "9": self._commands,
-            "10": self._admin_tools,
+            "10": self._installed_software,
+            "11": self._admin_tools,
         }
         while True:
             self.screens.mostrar_encabezado()
@@ -66,11 +67,12 @@ class SystemToolsMenu:
             ("7", "Información de red"),
             ("8", "Eventos recientes"),
             ("9", "Comandos de diagnóstico"),
+            ("10", "Software instalado y versiones"),
         )
         for number, label in options:
             print(f"[{number}] {label}")
         if professional:
-            print("[10] Consola administrativa")
+            print("[11] Consola administrativa")
         print("[0] Volver")
 
     def _windows_info(self, professional):
@@ -285,6 +287,28 @@ class SystemToolsMenu:
                 )
                 self._line("Mensaje", event.get("Message"), indent="    ")
             self._present(report, professional, persist=True)
+        self._pause()
+
+    def _installed_software(self, professional):
+        report = self._collect(self.diagnostics.installed_software)
+        if report:
+            print("SOFTWARE INSTALADO\n" + "─" * 76)
+            software = report.data.get("software", [])
+            if not report.data.get("available"):
+                print("No fue posible consultar el software instalado.")
+            elif not software:
+                print("Windows no reportó aplicaciones registradas.")
+            else:
+                print(f"Aplicaciones encontradas: {report.data.get('count', len(software))}")
+                for app in software:
+                    self._line("Nombre", app.get("Name"))
+                    self._line("Versión", app.get("Version"))
+                    self._line("Editor", app.get("Publisher"))
+                    if professional:
+                        self._line("Fecha de instalación", app.get("InstallDate"))
+                        self._line("Ubicación", app.get("InstallLocation"))
+                    print()
+            self._present(report, professional, persist=False)
         self._pause()
 
     def _commands(self, professional):

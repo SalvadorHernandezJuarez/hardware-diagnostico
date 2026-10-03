@@ -43,6 +43,27 @@ El ejecutable se generará en `dist/DiagnosticoHardware.exe`. Puedes copiarlo a 
 
 > `psutil`, `wmi` y `pywin32` ya eran requeridas en v1.0.
 
+## Desarrollo y pruebas
+
+Instala las dependencias de desarrollo (incluyen también las dependencias de la aplicación):
+
+```bash
+python -m pip install -r requirements-dev.txt
+```
+
+Ejecuta las pruebas y genera un resumen de cobertura con:
+
+```bash
+python -m pytest
+python -m pytest --cov=core --cov=modules --cov=reports --cov=ui --cov=utils
+```
+
+Comprueba el estilo del código con:
+
+```bash
+python -m ruff check .
+```
+
 ---
 
 ## Modo profesional
@@ -55,6 +76,7 @@ En el menú principal existe un modo técnico para soporte:
 - prioriza problemas por nivel de riesgo
 - recomienda acciones inmediatas según RAM, disco, temperatura, batería y GPU
 - incluye menús independientes con diagnóstico de red y auditoría de seguridad de Windows
+- permite consultar el software registrado en Windows y sus versiones desde Herramientas del sistema
 - usa una paleta morada y cian para identificar el modo profesional
 - incluye un catálogo local de ampliación de hardware: puede detectar el modelo del equipo, buscar modelos y consultar capacidades máximas de RAM y SSD
 - el catálogo se puede cargar desde Excel y se conserva en una base SQLite local
@@ -70,6 +92,8 @@ La plantilla admite marca, modelo, RAM máxima y soldada, tipo y ranuras de RAM,
 La opción **Hardware** está disponible en modo Normal y Profesional. Presenta procesador, RAM, almacenamiento, GPU, placa base, BIOS/UEFI, batería, pantalla, audio, dispositivos conectados, un resumen completo y capacidad de expansión. La tecla **T** conserva la vista de temperatura; en modo Profesional, **C** abre el catálogo local de ampliación por modelo.
 
 `modules/hardware.py` concentra la recolección en funciones que devuelven diccionarios estructurados, independientes de la presentación CMD. Usa `psutil`, WMI y, si el paquete `wmi` no está instalado, consultas CIM de PowerShell en Windows. La información ausente se representa como `None` y los errores de consulta se registran en `logs/hardware_diagnostico.log`. La interfaz normal prioriza indicadores básicos; la profesional incluye identificadores, números de serie y campos SMBIOS/controladores disponibles.
+
+La lista de software se obtiene del registro de desinstalación de Windows en las vistas de usuario y equipo, de 32 y 64 bits. Incluye nombre, versión y editor cuando están disponibles. Aplicaciones portables o software que no registre una entrada de desinstalación pueden no aparecer.
 
 La capacidad máxima SMBIOS se etiqueta como reportada, no como confirmada. Los conectores libres M.2/SATA no se deducen de las unidades detectadas: solo se muestran cuando una fuente del catálogo informa interfaces; de otro modo aparecen como desconocidos. Los datos completos quedan disponibles como diccionarios para la futura capa de diagnóstico y reportes.
 

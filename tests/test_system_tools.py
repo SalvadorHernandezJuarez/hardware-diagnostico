@@ -68,13 +68,46 @@ class SystemToolsDiagnosticsTests(unittest.TestCase):
             SystemToolsMenu._menu(professional=False)
         normal_output = " ".join(str(call.args[0]) for call in printer.call_args_list)
         self.assertNotIn("Consola administrativa", normal_output)
+        self.assertIn("[10] Software instalado y versiones", normal_output)
 
         with patch("builtins.print") as printer:
             SystemToolsMenu._menu(professional=True)
         professional_output = " ".join(
             str(call.args[0]) for call in printer.call_args_list
         )
-        self.assertIn("[10] Consola administrativa", professional_output)
+        self.assertIn("[11] Consola administrativa", professional_output)
+
+    def test_installed_software_is_collected_from_query_and_keeps_version(self):
+        applications = [
+            {
+                "Name": "Example App",
+                "Version": "2.4.1",
+                "Publisher": "Example Publisher",
+                "InstallDate": "20260915",
+                "InstallLocation": "C:\\Program Files\\Example",
+            }
+        ]
+        diagnostics = SystemToolsDiagnostics(
+            powershell_query=lambda script: (
+                applications if "CurrentVersion\\Uninstall" in script else []
+            )
+        )
+
+        report = diagnostics.installed_software()
+
+        self.assertTrue(report.data["available"])
+        self.assertEqual(report.data["count"], 1)
+        self.assertEqual(report.data["software"][0]["Version"], "2.4.1")
+        self.assertIn("HKLM/HKCU", report.source)
+
+    def test_installed_software_query_failure_is_reported(self):
+        report = SystemToolsDiagnostics(
+            powershell_query=lambda _script: None
+        ).installed_software()
+
+        self.assertFalse(report.data["available"])
+        self.assertEqual(report.data["software"], [])
+        self.assertIn("error", report.data)
 
     def test_environment_variables_supports_allowlisted_and_specific_lookup(self):
         with patch.dict(os.environ, {"PATH": "C:\\Windows", "CUSTOM_DIAG": "value"}):
