@@ -1,0 +1,47 @@
+{
+  "fecha": "2026-10-01T00:05:24.351484",
+  "modulos": {
+    "CPU": {
+      "Uso actual": "3.6 %",
+      "Núcleos físicos": 10,
+      "Hilos (lógicos)": 16,
+      "Frecuencia actual": "2400 MHz",
+      "Frecuencia máxima": "2400 MHz",
+      "Nombre": "13th Gen Intel(R) Core(TM) i7-13620H",
+      "Fabricante": "GenuineIntel",
+      "Arquitectura": "9",
+      "Nivel de caché L2 (KB)": 9728,
+      "Nivel de caché L3 (KB)": 24576
+    },
+    "Temperatura": {
+      "estado": "No disponible en este sistema"
+    },
+    "Resultado": {
+      "fecha": "2026-10-01T00:05:24-06:00",
+      "modo": "normal",
+      "estado": "NORMAL",
+      "resultados": [
+        {
+          "code": "SYSTEM_HEALTH",
+          "title": "Estado general del equipo",
+          "description": "Evaluación de salud: OK (puntuación 100/100).",
+          "evidence": {
+            "score": 100,
+            "hallazgos": []
+          },
+          "severity": "NORMAL",
+          "recommendation": "Mantén el equipo actualizado y revisa diagnósticos periódicos.",
+          "component": "SISTEMA",
+          "current_value": null,
+          "expected_value": null,
+          "confidence": "MEDIA",
+          "timestamp": "2026-10-01T00:05:24-06:00",
+          "source": "Desconocida",
+          "rule_id": "",
+          "priority": 100,
+          "possible_causes": []
+        }
+      ]
+    }
+  }
+}

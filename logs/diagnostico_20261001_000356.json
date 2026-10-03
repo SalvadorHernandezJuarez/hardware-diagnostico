@@ -1,0 +1,91 @@
+{
+  "fecha": "2026-10-01T00:03:56.625482",
+  "modulos": {
+    "Auditoría de seguridad": {
+      "timestamp": "2026-10-01T00:03:56-06:00",
+      "data": {
+        "firewall": {
+          "available": true,
+          "error": null,
+          "profiles": [
+            {
+              "name": "Domain",
+              "enabled": true
+            },
+            {
+              "name": "Private",
+              "enabled": true
+            },
+            {
+              "name": "Public",
+              "enabled": true
+            }
+          ]
+        }
+      },
+      "checks": [
+        {
+          "name": "Firewall",
+          "status": true,
+          "severity": "NORMAL",
+          "evidence": {
+            "profiles": [
+              {
+                "name": "Domain",
+                "enabled": true
+              },
+              {
+                "name": "Private",
+                "enabled": true
+              },
+              {
+                "name": "Public",
+                "enabled": true
+              }
+            ],
+            "disabled_profiles": []
+          },
+          "description": "Los perfiles reportados están activos."
+        }
+      ],
+      "findings": [
+        {
+          "code": "SEC_FIREWALL_ENABLED",
+          "title": "Perfiles de firewall activos",
+          "description": "Todos los perfiles de firewall reportados están habilitados.",
+          "evidence": {
+            "profiles": [
+              {
+                "name": "Domain",
+                "enabled": true
+              },
+              {
+                "name": "Private",
+                "enabled": true
+              },
+              {
+                "name": "Public",
+                "enabled": true
+              }
+            ]
+          },
+          "severity": "NORMAL",
+          "recommendation": "",
+          "component": "FIREWALL",
+          "current_value": true,
+          "expected_value": true,
+          "confidence": "ALTA",
+          "timestamp": "2026-10-01T00:03:56-06:00",
+          "source": "PowerShell / Windows",
+          "rule_id": "SEC_FIREWALL_ENABLED",
+          "priority": 100,
+          "possible_causes": []
+        }
+      ],
+      "severity": "NORMAL",
+      "commands": [
+        "Get-NetFirewallProfile"
+      ]
+    }
+  }
+}

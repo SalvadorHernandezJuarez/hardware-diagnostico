@@ -276,3 +276,133 @@ ValueError: Destino de red vacío o no válido.
 2026-09-27 22:43:01,645 | INFO | Modo profesional finalizado
 2026-09-27 22:43:36,933 | INFO | Aplicación iniciada
 2026-09-27 22:43:36,933 | INFO | Modo normal iniciado
+2026-09-30 23:59:26,532 | INFO | Aplicación iniciada
+2026-09-30 23:59:26,532 | INFO | Modo normal iniciado
+2026-09-30 23:59:49,760 | INFO | Diagnóstico ejecutado | modo=normal | módulos=6 | estado=NORMAL
+2026-10-01 00:00:50,127 | WARNING | No se pudieron consultar sensores de temperatura
+Traceback (most recent call last):
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\temperatura.py", line 20, in obtener
+    temps = psutil.sensors_temperatures()
+AttributeError: module 'psutil' has no attribute 'sensors_temperatures'
+2026-10-01 00:01:02,287 | INFO | Diagnóstico de hardware iniciado | modo=normal
+2026-10-01 00:01:02,287 | INFO | Módulo de hardware iniciado | módulo=cpu
+2026-10-01 00:01:03,621 | INFO | psutil no expone sensores de temperatura en esta plataforma
+2026-10-01 00:01:03,628 | INFO | Módulo de hardware iniciado | módulo=ram
+2026-10-01 00:01:03,704 | INFO | Módulo de hardware iniciado | módulo=storage
+2026-10-01 00:01:03,999 | INFO | Módulo de hardware iniciado | módulo=gpu
+2026-10-01 00:01:05,867 | INFO | Módulo de hardware iniciado | módulo=battery
+2026-10-01 00:01:06,054 | INFO | Módulo de hardware iniciado | módulo=system
+2026-10-01 00:01:06,068 | INFO | Módulo de hardware iniciado | módulo=temperaturas
+2026-10-01 00:01:06,068 | WARNING | No se pudieron consultar sensores de temperatura
+Traceback (most recent call last):
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\temperatura.py", line 20, in obtener
+    temps = psutil.sensors_temperatures()
+AttributeError: module 'psutil' has no attribute 'sensors_temperatures'
+2026-10-01 00:01:08,619 | INFO | Regla evaluada | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | regla=GPU_TEMPERATURE_NORMAL
+2026-10-01 00:01:08,619 | INFO | Hallazgo generado | codigo=GPU_TEMPERATURE_NORMAL | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | severidad=NORMAL
+2026-10-01 00:01:08,619 | INFO | Regla evaluada | componente=TEMPERATURA | regla=TEMPERATURE_PARTIAL
+2026-10-01 00:01:08,619 | INFO | Hallazgo generado | codigo=TEMPERATURE_PARTIAL | componente=TEMPERATURA | severidad=INFORMACIÓN
+2026-10-01 00:01:08,620 | INFO | Regla evaluada | componente=CPU | regla=CPU_USAGE_NORMAL
+2026-10-01 00:01:08,620 | INFO | Hallazgo generado | codigo=CPU_USAGE_NORMAL | componente=CPU | severidad=NORMAL
+2026-10-01 00:01:08,620 | INFO | Regla evaluada | componente=RAM | regla=RAM_MODULE_CONFIGURATION
+2026-10-01 00:01:08,620 | INFO | Hallazgo generado | codigo=RAM_MODULE_CONFIGURATION | componente=RAM | severidad=INFORMACIÓN
+2026-10-01 00:01:08,620 | INFO | Regla evaluada | componente=RAM | regla=RAM_USAGE_NORMAL
+2026-10-01 00:01:08,620 | INFO | Hallazgo generado | codigo=RAM_USAGE_NORMAL | componente=RAM | severidad=NORMAL
+2026-10-01 00:01:08,620 | INFO | Regla evaluada | componente=ALMACENAMIENTO | regla=STORAGE_NO_REPORTED_PROBLEM
+2026-10-01 00:01:08,620 | INFO | Hallazgo generado | codigo=STORAGE_NO_REPORTED_PROBLEM | componente=ALMACENAMIENTO | severidad=NORMAL
+2026-10-01 00:01:08,620 | INFO | Regla evaluada | componente=GPU | regla=GPU_NO_REPORTED_PROBLEM
+2026-10-01 00:01:08,620 | INFO | Hallazgo generado | codigo=GPU_NO_REPORTED_PROBLEM | componente=GPU | severidad=NORMAL
+2026-10-01 00:01:08,620 | INFO | Regla evaluada | componente=BATERÍA | regla=BATTERY_HEALTH_NORMAL
+2026-10-01 00:01:08,620 | INFO | Hallazgo generado | codigo=BATTERY_HEALTH_NORMAL | componente=BATERÍA | severidad=NORMAL
+2026-10-01 00:01:08,620 | INFO | Regla evaluada | componente=SISTEMA | regla=SYSTEM_INFORMATION
+2026-10-01 00:01:08,620 | INFO | Hallazgo generado | codigo=SYSTEM_INFORMATION | componente=SISTEMA | severidad=INFORMACIÓN
+2026-10-01 00:01:08,620 | INFO | Diagnóstico finalizado | hallazgos=9 | alertas=0 | críticos=0 | estado=NORMAL
+2026-10-01 00:02:19,853 | INFO | Prueba avanzada iniciada | componente=RAM | timestamp=2026-10-01T00:02:19-06:00
+2026-10-01 00:02:19,869 | INFO | Prueba avanzada finalizada | código=ADVANCED_RAM_BASIC_TEST_NORMAL | severidad=NORMAL | duración=0.02s | errores=0
+2026-10-01 00:02:33,932 | INFO | Prueba avanzada iniciada | componente=GPU | timestamp=2026-10-01T00:02:33-06:00
+2026-10-01 00:02:35,800 | INFO | Prueba avanzada finalizada | código=ADVANCED_GPU_TEST_NORMAL | severidad=NORMAL | duración=1.88s | errores=0
+2026-10-01 00:02:44,127 | INFO | Prueba avanzada iniciada | componente=RED | timestamp=2026-10-01T00:02:44-06:00
+2026-10-01 00:02:44,127 | INFO | Diagnóstico automático de red iniciado
+2026-10-01 00:02:52,581 | INFO | Hallazgo de red generado | codigo=NETWORK_CONNECTIVITY_NORMAL | severidad=NORMAL
+2026-10-01 00:02:52,592 | INFO | Diagnóstico automático de red finalizado | estado=NORMAL | hallazgos=1
+2026-10-01 00:02:52,592 | INFO | Prueba avanzada finalizada | código=NETWORK_CONNECTIVITY_NORMAL | severidad=NORMAL | duración=8.47s | errores=0
+2026-10-01 00:03:19,663 | INFO | Diagnóstico automático de red iniciado
+2026-10-01 00:03:23,963 | INFO | Hallazgo de red generado | codigo=NETWORK_CONNECTIVITY_NORMAL | severidad=NORMAL
+2026-10-01 00:03:23,963 | INFO | Diagnóstico automático de red finalizado | estado=NORMAL | hallazgos=1
+2026-10-01 00:03:56,625 | INFO | Hallazgo de seguridad | codigo=SEC_FIREWALL_ENABLED | severidad=NORMAL
+2026-10-01 00:04:13,454 | INFO | Hallazgo de seguridad | codigo=SEC_DEFENDER_ACTIVE | severidad=NORMAL
+2026-10-01 00:04:28,736 | INFO | Hallazgo de seguridad | codigo=SEC_SERVICES_REVIEWED | severidad=NORMAL
+2026-10-01 00:05:24,351 | WARNING | No se pudieron consultar sensores de temperatura
+Traceback (most recent call last):
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\temperatura.py", line 20, in obtener
+    temps = psutil.sensors_temperatures()
+AttributeError: module 'psutil' has no attribute 'sensors_temperatures'
+2026-10-01 00:05:24,393 | INFO | Diagnóstico ejecutado | modo=normal | módulos=2 | estado=NORMAL
+2026-10-01 00:05:53,708 | INFO | Modo profesional iniciado
+2026-10-01 00:06:00,364 | INFO | Diagnóstico de hardware iniciado | modo=profesional
+2026-10-01 00:06:00,364 | INFO | Módulo de hardware iniciado | módulo=cpu
+2026-10-01 00:06:01,676 | INFO | psutil no expone sensores de temperatura en esta plataforma
+2026-10-01 00:06:01,686 | INFO | Módulo de hardware iniciado | módulo=ram
+2026-10-01 00:06:01,754 | INFO | Módulo de hardware iniciado | módulo=storage
+2026-10-01 00:06:02,099 | INFO | Módulo de hardware iniciado | módulo=gpu
+2026-10-01 00:06:03,952 | INFO | Módulo de hardware iniciado | módulo=battery
+2026-10-01 00:06:04,108 | INFO | Módulo de hardware iniciado | módulo=system
+2026-10-01 00:06:04,108 | INFO | Módulo de hardware iniciado | módulo=temperaturas
+2026-10-01 00:06:04,108 | WARNING | No se pudieron consultar sensores de temperatura
+Traceback (most recent call last):
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\temperatura.py", line 20, in obtener
+    temps = psutil.sensors_temperatures()
+AttributeError: module 'psutil' has no attribute 'sensors_temperatures'
+2026-10-01 00:06:06,660 | INFO | Regla evaluada | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | regla=GPU_TEMPERATURE_NORMAL
+2026-10-01 00:06:06,660 | INFO | Hallazgo generado | codigo=GPU_TEMPERATURE_NORMAL | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | severidad=NORMAL
+2026-10-01 00:06:06,660 | INFO | Regla evaluada | componente=TEMPERATURA | regla=TEMPERATURE_PARTIAL
+2026-10-01 00:06:06,660 | INFO | Hallazgo generado | codigo=TEMPERATURE_PARTIAL | componente=TEMPERATURA | severidad=INFORMACIÓN
+2026-10-01 00:06:06,660 | INFO | Regla evaluada | componente=CPU | regla=CPU_USAGE_NORMAL
+2026-10-01 00:06:06,660 | INFO | Hallazgo generado | codigo=CPU_USAGE_NORMAL | componente=CPU | severidad=NORMAL
+2026-10-01 00:06:06,660 | INFO | Regla evaluada | componente=RAM | regla=RAM_MODULE_CONFIGURATION
+2026-10-01 00:06:06,660 | INFO | Hallazgo generado | codigo=RAM_MODULE_CONFIGURATION | componente=RAM | severidad=INFORMACIÓN
+2026-10-01 00:06:06,660 | INFO | Regla evaluada | componente=RAM | regla=RAM_USAGE_NORMAL
+2026-10-01 00:06:06,660 | INFO | Hallazgo generado | codigo=RAM_USAGE_NORMAL | componente=RAM | severidad=NORMAL
+2026-10-01 00:06:06,660 | INFO | Regla evaluada | componente=ALMACENAMIENTO | regla=STORAGE_NO_REPORTED_PROBLEM
+2026-10-01 00:06:06,660 | INFO | Hallazgo generado | codigo=STORAGE_NO_REPORTED_PROBLEM | componente=ALMACENAMIENTO | severidad=NORMAL
+2026-10-01 00:06:06,660 | INFO | Regla evaluada | componente=GPU | regla=GPU_NO_REPORTED_PROBLEM
+2026-10-01 00:06:06,660 | INFO | Hallazgo generado | codigo=GPU_NO_REPORTED_PROBLEM | componente=GPU | severidad=NORMAL
+2026-10-01 00:06:06,660 | INFO | Regla evaluada | componente=BATERÍA | regla=BATTERY_HEALTH_NORMAL
+2026-10-01 00:06:06,660 | INFO | Hallazgo generado | codigo=BATTERY_HEALTH_NORMAL | componente=BATERÍA | severidad=NORMAL
+2026-10-01 00:06:06,662 | INFO | Regla evaluada | componente=SISTEMA | regla=SYSTEM_INFORMATION
+2026-10-01 00:06:06,662 | INFO | Hallazgo generado | codigo=SYSTEM_INFORMATION | componente=SISTEMA | severidad=INFORMACIÓN
+2026-10-01 00:06:06,662 | INFO | Diagnóstico finalizado | hallazgos=9 | alertas=0 | críticos=0 | estado=NORMAL
+2026-10-01 00:07:14,010 | INFO | Diagnóstico ejecutado | modo=profesional | módulos=1 | estado=NORMAL
+2026-10-01 00:07:33,605 | INFO | Diagnóstico de hardware iniciado | modo=profesional
+2026-10-01 00:07:33,605 | INFO | Módulo de hardware iniciado | módulo=cpu
+2026-10-01 00:07:34,902 | INFO | psutil no expone sensores de temperatura en esta plataforma
+2026-10-01 00:07:34,908 | INFO | Módulo de hardware iniciado | módulo=ram
+2026-10-01 00:07:34,984 | INFO | Módulo de hardware iniciado | módulo=storage
+2026-10-01 00:07:35,340 | INFO | Módulo de hardware iniciado | módulo=gpu
+2026-10-01 00:07:37,190 | INFO | Módulo de hardware iniciado | módulo=battery
+2026-10-01 00:07:37,351 | INFO | Módulo de hardware iniciado | módulo=system
+2026-10-01 00:07:37,370 | INFO | Módulo de hardware iniciado | módulo=temperaturas
+2026-10-01 00:07:37,370 | WARNING | No se pudieron consultar sensores de temperatura
+Traceback (most recent call last):
+  File "C:\Users\salva\Desktop\hardware-diagnostico\modules\temperatura.py", line 20, in obtener
+    temps = psutil.sensors_temperatures()
+AttributeError: module 'psutil' has no attribute 'sensors_temperatures'
+2026-10-01 00:07:39,918 | INFO | Regla evaluada | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | regla=GPU_TEMPERATURE_NORMAL
+2026-10-01 00:07:39,918 | INFO | Hallazgo generado | codigo=GPU_TEMPERATURE_NORMAL | componente=GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU | severidad=NORMAL
+2026-10-01 00:07:39,920 | INFO | Regla evaluada | componente=TEMPERATURA | regla=TEMPERATURE_PARTIAL
+2026-10-01 00:07:39,920 | INFO | Hallazgo generado | codigo=TEMPERATURE_PARTIAL | componente=TEMPERATURA | severidad=INFORMACIÓN
+2026-10-01 00:07:39,920 | INFO | Regla evaluada | componente=CPU | regla=CPU_USAGE_NORMAL
+2026-10-01 00:07:39,920 | INFO | Hallazgo generado | codigo=CPU_USAGE_NORMAL | componente=CPU | severidad=NORMAL
+2026-10-01 00:07:39,920 | INFO | Regla evaluada | componente=RAM | regla=RAM_MODULE_CONFIGURATION
+2026-10-01 00:07:39,920 | INFO | Hallazgo generado | codigo=RAM_MODULE_CONFIGURATION | componente=RAM | severidad=INFORMACIÓN
+2026-10-01 00:07:39,920 | INFO | Regla evaluada | componente=RAM | regla=RAM_USAGE_NORMAL
+2026-10-01 00:07:39,920 | INFO | Hallazgo generado | codigo=RAM_USAGE_NORMAL | componente=RAM | severidad=NORMAL
+2026-10-01 00:07:39,920 | INFO | Regla evaluada | componente=ALMACENAMIENTO | regla=STORAGE_NO_REPORTED_PROBLEM
+2026-10-01 00:07:39,920 | INFO | Hallazgo generado | codigo=STORAGE_NO_REPORTED_PROBLEM | componente=ALMACENAMIENTO | severidad=NORMAL
+2026-10-01 00:07:39,920 | INFO | Regla evaluada | componente=GPU | regla=GPU_NO_REPORTED_PROBLEM
+2026-10-01 00:07:39,920 | INFO | Hallazgo generado | codigo=GPU_NO_REPORTED_PROBLEM | componente=GPU | severidad=NORMAL
+2026-10-01 00:07:39,920 | INFO | Regla evaluada | componente=BATERÍA | regla=BATTERY_HEALTH_NORMAL
+2026-10-01 00:07:39,920 | INFO | Hallazgo generado | codigo=BATTERY_HEALTH_NORMAL | componente=BATERÍA | severidad=NORMAL
+2026-10-01 00:07:39,920 | INFO | Regla evaluada | componente=SISTEMA | regla=SYSTEM_INFORMATION
+2026-10-01 00:07:39,920 | INFO | Hallazgo generado | codigo=SYSTEM_INFORMATION | componente=SISTEMA | severidad=INFORMACIÓN
+2026-10-01 00:07:39,920 | INFO | Diagnóstico finalizado | hallazgos=9 | alertas=0 | críticos=0 | estado=NORMAL
