@@ -15,7 +15,6 @@ env/
 
 # PyInstaller build output
 /build/
-/dist/
 /*.spec.bak
 
 # Runtime logs, reports, and local databases
